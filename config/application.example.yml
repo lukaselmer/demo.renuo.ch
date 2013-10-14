@@ -16,4 +16,4 @@ ROLES: [admin, user, VIP]
 RAILS_SECRET_TOKEN: very_long_string___use_rake_secret___
 APP_DOMAIN: demo.renuo.ch
 CODECLIMATE_REPO_TOKEN:
-DISABLE_COVERALLS:
+ENABLE_COVERALLS:

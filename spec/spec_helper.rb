@@ -1,12 +1,12 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 
-if ENV['CODECLIMATE_REPO_TOKEN']
+if ENV['CODECLIMATE_REPO_TOKEN'].to_s.length > 0
   require 'codeclimate-test-reporter'
   CodeClimate::TestReporter.start
 end
 
-unless ENV['DISABLE_COVERALLS']
+if ENV['ENABLE_COVERALLS'].to_s.length > 0
   require 'coveralls'
   Coveralls.wear!
 end
