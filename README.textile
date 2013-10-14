@@ -1,8 +1,12 @@
-h1. Demo Renuo Ch
+h1. demo.renuo.ch
 
-This application was generated with the "rails_apps_composer":https://github.com/RailsApps/rails_apps_composer gem provided by the "RailsApps Project":http://railsapps.github.io/.
+!https://travis-ci.org/renuo/demo.renuo.ch.png?branch=master!:https://travis-ci.org/renuo/demo.renuo.ch
+!https://coveralls.io/repos/renuo/demo.renuo.ch/badge.png(Coverage Status)!:https://coveralls.io/r/renuo/demo.renuo.ch
+"!https://codeclimate.com/repos/525c52ddf3ea003dbc016c26/badges/c4aee87915b7ce528377/gpa.png!":https://codeclimate.com/repos/525c52ddf3ea003dbc016c26/feed
 
 h2. Diagnostics
+
+This application was generated with the "rails_apps_composer":https://github.com/RailsApps/rails_apps_composer gem provided by the "RailsApps Project":http://railsapps.github.io/.
 
 This application was built with recipes that are known to work together.
 
