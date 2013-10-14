@@ -1,8 +1,6 @@
 h1. demo.renuo.ch
 
-!https://travis-ci.org/renuo/demo.renuo.ch.png?branch=master!:https://travis-ci.org/renuo/demo.renuo.ch
-!https://coveralls.io/repos/renuo/demo.renuo.ch/badge.png(Coverage Status)!:https://coveralls.io/r/renuo/demo.renuo.ch
-"!https://codeclimate.com/repos/525c52ddf3ea003dbc016c26/badges/c4aee87915b7ce528377/gpa.png!":https://codeclimate.com/repos/525c52ddf3ea003dbc016c26/feed
+!https://travis-ci.org/renuo/demo.renuo.ch.png?branch=master!:https://travis-ci.org/renuo/demo.renuo.ch !https://coveralls.io/repos/renuo/demo.renuo.ch/badge.png(Coverage Status)!:https://coveralls.io/r/renuo/demo.renuo.ch "!https://codeclimate.com/repos/525c52ddf3ea003dbc016c26/badges/c4aee87915b7ce528377/gpa.png!":https://codeclimate.com/repos/525c52ddf3ea003dbc016c26/feed
 
 h2. Diagnostics
 
