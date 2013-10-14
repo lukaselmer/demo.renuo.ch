@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.0.0
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - CODECLIMATE_REPO_TOKEN=37cd5900261e8d354d04cf5afd6b47cbf7ebe11d9ff347faef041cea3fdd525e bundle exec rake spec
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - cp config/application.example.yml config/application.yml
+  - psql -c 'create database demo_renuo_ch_test' -U postgres
+addons:
+    code_climate:
+        repo_token: 37cd5900261e8d354d04cf5afd6b47cbf7ebe11d9ff347faef041cea3fdd525e

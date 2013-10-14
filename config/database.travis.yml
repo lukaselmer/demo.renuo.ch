@@ -1,0 +1,30 @@
+development:
+  adapter: postgresql
+  username: postgres
+  password:
+  database: demo_renuo_ch_<%= Rails.env %>
+  min_messages: ERROR
+  pool: 5
+  timeout: 5000
+  host: localhost
+
+test:
+  adapter: postgresql
+  username: postgres
+  password:
+  database: demo_renuo_ch_<%= Rails.env %>
+  min_messages: ERROR
+  pool: 5
+  timeout: 5000
+  host: localhost
+
+production:
+  adapter: postgresql
+  username: postgres
+  password:
+  database: demo_renuo_ch_<%= Rails.env %>
+  min_messages: ERROR
+  pool: 5
+  timeout: 5000
+  host: localhost
+
