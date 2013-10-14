@@ -13,3 +13,7 @@ ADMIN_NAME: First User
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
 ROLES: [admin, user, VIP]
+RAILS_SECRET_TOKEN: very_long_string___use_rake_secret___
+APP_DOMAIN: demo.renuo.ch
+CODECLIMATE_REPO_TOKEN:
+DISABLE_COVERALLS:

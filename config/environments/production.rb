@@ -11,7 +11,7 @@ DemoRenuoCh::Application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
@@ -70,14 +70,16 @@ DemoRenuoCh::Application.configure do
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
-  config.active_support.deprecation = :notify  
+  config.active_support.deprecation = :notify
 
-    config.action_mailer.smtp_settings = {
-      :address   => "smtp.mandrillapp.com",
-      :port      => 25,
+  config.action_mailer.default_url_options = {host: ENV['APP_DOMAIN']}
+
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.mandrillapp.com",
+      :port => 25,
       :user_name => ENV["MANDRILL_USERNAME"],
-      :password  => ENV["MANDRILL_API_KEY"]
-    }
+      :password => ENV["MANDRILL_API_KEY"]
+  }
 
 
   # Disable automatic flushing of the log to improve performance.

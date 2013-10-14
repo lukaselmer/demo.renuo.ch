@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 2.3.2.2'
+gem 'font-awesome-rails'
 gem 'cancan'
 gem 'devise'
 gem 'devise_invitable'
@@ -15,9 +16,15 @@ gem 'figaro'
 gem 'pg'
 gem 'rolify'
 gem 'simple_form', '>= 3.0.0.rc'
+gem 'cocoon'
+gem 'show_for', github: 'plataformatec/show_for'
+gem 'friendly_id', github: 'norman/friendly_id'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'meta_request'
+  gem 'coffee-rails-source-maps'
+  gem 'hub', require: nil
   gem 'guard-bundler'
   gem 'guard-cucumber'
   gem 'guard-rails'
@@ -41,4 +48,6 @@ group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
   gem 'launchy'
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'coveralls', require: false
 end

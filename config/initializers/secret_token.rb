@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-DemoRenuoCh::Application.config.secret_key_base = 'ae7e3cfe491871e4ff819a47715a7666b5078682329fa3942b6d4d3ffb2d8340573dc20b6c28a72b49b6766578b3e5d7a1cf9a244b9d9dd70eb70b6bd7f607fe'
+DemoRenuoCh::Application.config.secret_key_base = ENV['RAILS_SECRET_TOKEN']
