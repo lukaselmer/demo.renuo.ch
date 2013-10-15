@@ -11,10 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015072627) do
+ActiveRecord::Schema.define(version: 20131015084806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "content_rich_texts", force: true do |t|
+    t.string "content"
+  end
+
+  create_table "navigation_items", force: true do |t|
+    t.integer  "page_id"
+    t.string   "target"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "navigation_id"
+  end
+
+  create_table "navigations", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "page_contents", force: true do |t|
+    t.integer  "content_type_id"
+    t.string   "content_type_type"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", force: true do |t|
+    t.string   "title",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"

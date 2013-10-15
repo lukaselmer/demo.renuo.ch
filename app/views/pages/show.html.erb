@@ -1,0 +1,6 @@
+<h2><%= @page.title %></h2>
+<%# TODO: render special template depending on content_type class %>
+<% @page.content_types.each do |ct| %>
+  <%= ct.as_json %>
+  <%= ct.content.html_safe %>
+<% end %>

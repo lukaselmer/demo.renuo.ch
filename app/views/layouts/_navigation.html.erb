@@ -1,5 +1,15 @@
 <%= link_to "Demo Renuo Ch", root_path, :class => 'brand' %>
 <ul class="nav">
+
+  <% Navigation.where(name: 'Main Navigation').first.navigation_items.each do |ni| %>
+      <li>
+        <%= link_to ni.page.title, ni.page %>
+      </li>
+  <% end %>
+
+</ul>
+<ul class="nav pull-right">
+
   <% if user_signed_in? %>
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>

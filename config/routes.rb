@@ -3,4 +3,5 @@ DemoRenuoCh::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   root :to => "home#index"
   resources :users
+  resources :pages, only: [:show]
 end
