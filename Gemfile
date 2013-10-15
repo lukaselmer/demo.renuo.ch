@@ -23,6 +23,8 @@ gem 'friendly_id', github: 'norman/friendly_id'
 gem 'rails_admin'
 gem 'ancestry'
 gem 'rails_admin_nestable'
+gem 'ckeditor'
+gem 'paperclip'
 
 group :development do
   gem 'better_errors'
