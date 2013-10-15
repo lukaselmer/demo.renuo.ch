@@ -21,3 +21,13 @@
 
 en:
   hello: "Hello world"
+
+  route:
+    users:
+      index: 'Alle Benutzer anzeigen'
+      new: 'Neuen Benutzer anlegen'
+      new: 'Benutzer bearbeiten'
+
+  nav:
+    users:
+      index: 'Benutzer Administration'
