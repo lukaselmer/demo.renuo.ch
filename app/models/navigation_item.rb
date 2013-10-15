@@ -1,5 +1,7 @@
 class NavigationItem < ActiveRecord::Base
   belongs_to :page
+  belongs_to :navigation
+
   has_ancestry
 
   rails_admin do
@@ -13,7 +15,8 @@ class NavigationItem < ActiveRecord::Base
     end
 
     nestable_tree({
-        max_depth: 2
+        max_depth: 2,
+        position_field: :position
                   })
   end
 
