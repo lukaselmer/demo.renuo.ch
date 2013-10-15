@@ -19,6 +19,9 @@ gem 'simple_form', '>= 3.0.0.rc'
 gem 'cocoon'
 gem 'show_for', github: 'plataformatec/show_for'
 gem 'friendly_id', github: 'norman/friendly_id'
+
+gem 'rails_admin'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
