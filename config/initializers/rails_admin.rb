@@ -163,4 +163,22 @@ RailsAdmin.config do |config|
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
   # end
 
+  config.actions do
+    # root actions
+    dashboard # mandatory
+              # collection actions
+    index # mandatory
+    new
+    export
+    history_index
+    bulk_delete
+              # member actions
+    show
+    edit
+    delete
+    history_show
+    show_in_app
+    nestable
+  end
+
 end

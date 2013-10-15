@@ -21,6 +21,8 @@ gem 'show_for', github: 'plataformatec/show_for'
 gem 'friendly_id', github: 'norman/friendly_id'
 
 gem 'rails_admin'
+gem 'ancestry'
+gem 'rails_admin_nestable'
 
 group :development do
   gem 'better_errors'

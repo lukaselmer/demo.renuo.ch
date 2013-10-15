@@ -1,5 +1,6 @@
 class NavigationItem < ActiveRecord::Base
   belongs_to :page
+  has_ancestry
 
   rails_admin do
     edit do
@@ -10,6 +11,10 @@ class NavigationItem < ActiveRecord::Base
         end
       end
     end
+
+    nestable_tree({
+        max_depth: 2
+                  })
   end
 
   # [I18n.t('route.user.new'),url_for(controller: 'news', action: 'new')] => <a href="users/new">Neuen Benutzer anlegen</a>
