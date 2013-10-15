@@ -15,3 +15,4 @@ EOF
 end
 
 task 'db:drop' => :kill_postgres_connections
+task 'db:test:purge' => :kill_postgres_connections
