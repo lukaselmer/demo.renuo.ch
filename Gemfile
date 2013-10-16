@@ -25,6 +25,7 @@ gem 'ancestry'
 gem 'rails_admin_nestable'
 gem 'ckeditor'
 gem 'paperclip'
+gem 'paper_trail', '>= 3.0.0.beta1'
 
 group :development do
   gem 'better_errors'
