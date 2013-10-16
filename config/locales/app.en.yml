@@ -24,10 +24,20 @@ en:
 
   route:
     users:
-      index: 'Alle Benutzer anzeigen'
-      new: 'Neuen Benutzer anlegen'
-      new: 'Benutzer bearbeiten'
+      index: 'Show all Users'
+      new: 'Create new User'
+      new: 'Edit User'
 
   nav:
     users:
-      index: 'Benutzer Administration'
+      index: 'User Administration'
+
+
+  activerecord:
+    models:
+      content_rich_text:
+        one: HTML Snippet
+        other: HTML Snippets
+      navigation_item:
+        one: Nav item
+        other: Nav items

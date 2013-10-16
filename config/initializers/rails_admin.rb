@@ -7,7 +7,7 @@ RailsAdmin.config do |config|
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['Demo Renuo Ch', 'Admin']
+  config.main_app_name = ['RenuoCMS Demo', 'Backend']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
@@ -18,7 +18,7 @@ RailsAdmin.config do |config|
   # config.audit_with :history, 'User'
 
   # Or with a PaperTrail: (you need to install it first)
-  # config.audit_with :paper_trail, 'User'
+  config.audit_with :paper_trail, 'User'
 
   # Display empty fields in show views:
   # config.compact_show_view = false
@@ -30,7 +30,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['Role', 'User']
 
   # Include specific models (exclude the others):
-  # config.included_models = ['Role', 'User']
+  config.included_models = [Role, User, Page, ContentRichText, NavigationItem, Navigation, Ckeditor::AttachmentFile, Ckeditor::Picture]
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]

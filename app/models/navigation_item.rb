@@ -5,6 +5,7 @@ class NavigationItem < ActiveRecord::Base
   has_ancestry
 
   rails_admin do
+    object_label_method :label
     edit do
       field :page
       field :target, :enum do
@@ -14,10 +15,19 @@ class NavigationItem < ActiveRecord::Base
       end
     end
 
+    parent Navigation
+
     nestable_tree({
         max_depth: 2,
         position_field: :position
                   })
+  end
+
+  def label
+    return self.class.model_name.human if new_record?
+    return page.title if page
+    controller, action = target.split('#')
+    I18n.t("nav.#{controller.split('/')[1..-1].join('_')}.#{action}")
   end
 
   # [I18n.t('route.user.new'),url_for(controller: 'news', action: 'new')] => <a href="users/new">Neuen Benutzer anlegen</a>

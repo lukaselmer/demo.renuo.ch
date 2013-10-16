@@ -4,10 +4,10 @@
   <% nav && nav.navigation_items.each do |ni| %>
       <li>
         <% if ni.page %>
-        <%= link_to ni.page.title, ni.page %>
+        <%= link_to ni.label, ni.page %>
         <% else %>
         <% controller, action = ni.target.split('#') %>
-        <%= link_to I18n.t("nav.#{controller.split('/')[1..-1].join('_')}.#{action}"), url_for(controller: controller, action: action) %>
+        <%= link_to ni.label, url_for(controller: controller, action: action) %>
         <% end %>
       </li>
   <% end %>
