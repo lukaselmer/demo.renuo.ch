@@ -98,6 +98,7 @@ de:
         title: 'Sortieren von %{model_label}'
         menu: 'Sortieren'
         breadcrumb: 'Sortieren'
+        success: 'Gespeichert'
     form:
       cancel: "Abbrechen"
       basic_info: "Grundlegende Informationen"
