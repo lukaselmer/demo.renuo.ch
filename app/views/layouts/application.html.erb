@@ -27,6 +27,18 @@
             </div>
           </div>
           <footer>
+            <ul class="nav">
+              <% FooterNavigationItem.all.each do |ni| %>
+                  <li>
+                    <% if ni.page %>
+                        <%= link_to ni.label, ni.page %>
+                    <% else %>
+                        <% controller, action = ni.target.split('#') %>
+                        <%= link_to ni.label, url_for(controller: controller, action: action) %>
+                    <% end %>
+                  </li>
+              <% end %>
+            </ul>
           </footer>
         </div>
       </div> <!--! end of .container -->

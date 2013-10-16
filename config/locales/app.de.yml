@@ -47,6 +47,9 @@ de:
       navigation_item:
         one: Navi-Eintrag
         other: Navi-Einträge
+      footer_navigation_item:
+        one: Fusszeilen Navi-Eintrag
+        other: Fusszeilen Navi-Einträge
       role:
         one: Rolle
         other: Rollen

@@ -1,3 +1,4 @@
+
 class NavigationItem < ActiveRecord::Base
   belongs_to :page
   belongs_to :navigation
@@ -7,6 +8,7 @@ class NavigationItem < ActiveRecord::Base
   rails_admin do
     object_label_method :label
     edit do
+      field :navigation
       field :page
       field :target, :enum do
         enum do
@@ -18,8 +20,8 @@ class NavigationItem < ActiveRecord::Base
     parent Navigation
 
     nestable_tree({
-        max_depth: 2,
-        position_field: :position
+                      max_depth: 2,
+                      position_field: :position
                   })
   end
 
