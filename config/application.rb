@@ -11,13 +11,20 @@ module DemoRenuoCh
 
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
-      
+
       g.test_framework :rspec, fixture: true
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
-      
-      
+
+
       g.view_specs false
       g.helper_specs false
+    end
+
+    # Custom directories with classes and modules you want to be autoloadable.
+    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/app/admin)
+    Dir["#{config.root}/app/admin/**"].each do |dir|
+      config.autoload_paths << dir if Dir.exists? dir
     end
 
     # Settings in config/environments/* take precedence over those specified here.

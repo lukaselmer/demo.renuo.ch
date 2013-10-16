@@ -5,25 +5,7 @@ class NavigationItem < ActiveRecord::Base
 
   has_ancestry
 
-  rails_admin do
-    object_label_method :label
-    edit do
-      field :navigation
-      field :page
-      field :target, :enum do
-        enum do
-          NavigationItem::choosable_link_options
-        end
-      end
-    end
-
-    parent Navigation
-
-    nestable_tree({
-                      max_depth: 2,
-                      position_field: :position
-                  })
-  end
+  include NavigationItemAdmin
 
   def label
     return self.class.model_name.human if new_record?
