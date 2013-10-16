@@ -4,7 +4,6 @@ module NavigationItemAdmin
     model.rails_admin do
       object_label_method :label
       edit do
-        field :navigation
         field :page
         field :target, :enum do
           enum do
@@ -13,7 +12,13 @@ module NavigationItemAdmin
         end
       end
 
-      parent Navigation
+      default_action do
+        :nestable
+      end
+
+      weight do
+        -1
+      end
 
       nestable_tree({
                         max_depth: 2,
@@ -21,6 +26,4 @@ module NavigationItemAdmin
                     })
     end
   end
-
-
 end

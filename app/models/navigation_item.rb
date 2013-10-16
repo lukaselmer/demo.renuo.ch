@@ -1,7 +1,6 @@
 
 class NavigationItem < ActiveRecord::Base
   belongs_to :page
-  belongs_to :navigation
 
   has_ancestry
 

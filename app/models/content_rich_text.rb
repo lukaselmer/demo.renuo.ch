@@ -16,5 +16,9 @@ class ContentRichText < ActiveRecord::Base
         %{<div style="max-height: 100px; zoom: 0.5;">#{obj.content}</div>}.html_safe
       end
     end
+
+    weight do
+      -2
+    end
   end
 end

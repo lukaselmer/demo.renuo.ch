@@ -1,6 +1,33 @@
 # RailsAdmin config file. Generated on October 15, 2013 09:26
 # See github.com/sferik/rails_admin for more informations
 
+module RailsAdmin
+  module Config
+    Model.class_eval do
+      register_instance_option :default_action do
+        :index
+      end
+    end
+  end
+
+  ApplicationHelper.class_eval do
+    def navigation nodes_stack, nodes, level=0
+      nodes.map do |node|
+        model_param = node.abstract_model.to_param
+        url = url_for(:action => node.default_action, :controller => 'rails_admin/main', :model_name => model_param)
+        level_class = " nav-level-#{level}" if level > 0
+        nav_icon = node.navigation_icon ? %{<i class="#{node.navigation_icon}"></i>}.html_safe : ''
+
+        li = content_tag :li, "data-model" => model_param do
+          link_to nav_icon + node.label_plural, url, :class => "pjax#{level_class}"
+        end
+        li + navigation(nodes_stack, nodes_stack.select { |n| n.parent.to_s == node.abstract_model.model_name }, level+1)
+      end.join.html_safe
+    end
+  end
+end
+
+
 RailsAdmin.config do |config|
 
 
@@ -19,6 +46,7 @@ RailsAdmin.config do |config|
 
   # Or with a PaperTrail: (you need to install it first)
   config.audit_with :paper_trail, 'User'
+  config.authorize_with :cancan
 
   # Display empty fields in show views:
   # config.compact_show_view = false
@@ -30,7 +58,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['Role', 'User']
 
   # Include specific models (exclude the others):
-  config.included_models = [Role, User, Page, ContentRichText, NavigationItem, FooterNavigationItem, Navigation, Ckeditor::AttachmentFile, Ckeditor::Picture]
+  config.included_models = [Role, User, Page, ContentRichText, NavigationItem, FooterNavigationItem, Ckeditor::AttachmentFile, Ckeditor::Picture]
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -49,7 +77,6 @@ RailsAdmin.config do |config|
 
   # Now you probably need to tour the wiki a bit: https://github.com/sferik/rails_admin/wiki
   # Anyway, here is how RailsAdmin saw your application's models when you ran the initializer:
-
 
 
   ###  Role  ###
@@ -167,17 +194,19 @@ RailsAdmin.config do |config|
     # root actions
     dashboard # mandatory
               # collection actions
-    index # mandatory
+    index
     new
-    export
-    history_index
+              #export
+              #history_index
     bulk_delete
               # member actions
     show
-    edit
+    edit do
+      #visible false
+    end
     delete
-    history_show
-    show_in_app
+              #history_show
+              #show_in_app
     nestable
   end
 

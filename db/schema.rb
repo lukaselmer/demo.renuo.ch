@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016082637) do
+ActiveRecord::Schema.define(version: 20131016234654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,19 +53,12 @@ ActiveRecord::Schema.define(version: 20131016082637) do
     t.string   "target"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "navigation_id"
     t.string   "ancestry"
     t.integer  "order"
     t.integer  "position"
   end
 
   add_index "navigation_items", ["ancestry"], name: "index_navigation_items_on_ancestry", using: :btree
-
-  create_table "navigations", force: true do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "page_contents", force: true do |t|
     t.integer  "content_type_id"
