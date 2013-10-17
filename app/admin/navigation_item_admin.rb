@@ -4,17 +4,30 @@ module NavigationItemAdmin
     model.rails_admin do
       object_label_method :label
       edit do
-        field :page
-        field :target
+        field :page do
+          label do
+            I18n.t('activerecord.atrributes.navigation_item.page')
+          end
+          help do
+            i18n_help_lookup(self)
+          end
+        end
+        field :target do
+          label do
+            I18n.t('activerecord.atrributes.navigation_item.target')
+          end
+
+          help do
+            i18n_help_lookup(self)
+          end
+        end
       end
 
       default_action do
         :nestable
       end
 
-      weight do
-        -1
-      end
+      weight -1
 
       nestable_tree({
                         max_depth: 2,

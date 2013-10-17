@@ -27,6 +27,24 @@ module RailsAdmin
   end
 end
 
+module RailsAdmin
+  module Config
+    module Fields
+      module Types
+        Base.class_eval do
+          def i18n_help_lookup (field)
+            model = field.abstract_model.model_name.underscore
+            field = field.name
+            model_lookup = "admin.help.#{model}.#{field}".to_sym
+            field_lookup = "admin.help.#{field}".to_sym
+            I18n.t(model_lookup, :help => help, :default => [field_lookup, help]).html_safe
+          end
+        end
+      end
+    end
+  end
+end
+
 
 RailsAdmin.config do |config|
 

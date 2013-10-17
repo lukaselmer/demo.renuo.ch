@@ -32,13 +32,19 @@ de:
     users:
       index: 'Benutzer Administration'
 
+  admin:
+    help:
+      navigation_item:
+        page: Erstellt Link auf ein selbst angelegte Seite.
+        target: 'Beispiel:<br/>Externer Link: <code>http://www.google.ch</code><br/>Interner Link: <code>/news/latest</code>'
+
 
   activerecord:
     atrributes:
       page:
         title: Seitenname
       navigation_item:
-        target: Ziel
+        target: Beliebige Adresse
         page: Seite
     models:
       page:
