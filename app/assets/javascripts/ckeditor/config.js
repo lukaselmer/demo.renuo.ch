@@ -74,7 +74,6 @@ CKEDITOR.editorConfig = function(config)
         return url + ( ( url.indexOf( "?" ) != -1 ) ? "&" : "?" ) + queryString.join( "&" );
     };
 
-    // TODO wie geht das in production?
     // besser wäre wenn custom config überschrieben werden könnte, anstatt config.js, evtl. pull request erstellen
     config.customConfig = '/assets/ckeditor/custom_config.js'
 
