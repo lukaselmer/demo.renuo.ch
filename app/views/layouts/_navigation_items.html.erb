@@ -1,0 +1,14 @@
+<%
+    nav_class ||= ''
+%>
+<ul class="<%= nav_class %>">
+<% item_class.all.each do |ni| %>
+<li>
+  <% if ni.page %>
+      <%= link_to ni.label, ni.page %>
+  <% else %>
+      <%= link_to ni.label, ni.target %>
+  <% end %>
+</li>
+<% end %>
+</ul>

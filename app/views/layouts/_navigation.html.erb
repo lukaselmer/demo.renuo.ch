@@ -3,17 +3,8 @@
 </a>
 <div class="nav-collapse collapse">
 
-<ul class="nav">
-  <% NavigationItem.all.each do |ni| %>
-      <li>
-        <% if ni.page %>
-        <%= link_to ni.label, ni.page %>
-        <% else %>
-        <%= link_to ni.label, ni.target %>
-        <% end %>
-      </li>
-  <% end %>
-</ul>
+<%= render 'layouts/navigation_items', item_class: NavigationItem, nav_class: 'nav' %>
+
 <ul class="nav pull-right">
 
   <% if user_signed_in? %>

@@ -46,25 +46,17 @@
               <div class="span4">
                 <div class="fwidget">
                     <h6>Links</h6>
-                    <ul>
-                      <% FooterNavigationItem.all.each do |ni| %>
-                          <li>
-                            <% if ni.page %>
-                                <%= link_to ni.label, ni.page %>
-                            <% else %>
-                                <%= link_to ni.label, ni.target %>
-                            <% end %>
-                          </li>
-                      <% end %>
-                    </ul>
+                    <%= render 'layouts/navigation_items', item_class: FooterNavigationItem %>
                 </div>
               </div>
-            </div>
-            <div class="span12">
-                <div class="copy">
-                    <h6>Renuo <span class="color">CMS</span></h6>
-                    <p>Copyright &copy; <a href="#">Renuo GmbH</a> - <a href="https://renuo.ch/ueber-uns">Über uns</a> | <a href="https://renuo.ch/kontakt">Kontakt</a></p>
+              <div class="span4">
+                <div class="fwidget">
+                  <h6>Renuo <span class="color">CMS</span></h6>
+                  <div class="copy">
+                    <p>Copyright &copy; <a href="https://www.renuo.ch">Renuo GmbH</a> - <a href="https://www.renuo.ch/ueber-uns">Über uns</a> | <a href="https://www.renuo.ch/kontakt">Kontakt</a></p>
+                  </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
