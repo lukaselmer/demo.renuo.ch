@@ -34,6 +34,12 @@ de:
 
 
   activerecord:
+    atrributes:
+      page:
+        title: Seitenname
+      navigation_item:
+        target: Ziel
+        page: Seite
     models:
       page:
         one: Seite

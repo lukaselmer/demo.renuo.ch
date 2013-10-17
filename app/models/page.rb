@@ -5,5 +5,7 @@ class Page < ActiveRecord::Base
   rails_admin do
     navigation_label 'Content'
     weight -1
+
   end
+
 end

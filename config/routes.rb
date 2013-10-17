@@ -4,11 +4,5 @@ DemoRenuoCh::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root :to => "home#index"
   resources :pages, only: [:show]
-
-  # generate paths that are available in cms link chooser
-  # (maybe: use cancan for authorization OR show all, auth happens on request)
-  scope path: '_' do
-    resources :users
-  end
-
+  resources :users
 end

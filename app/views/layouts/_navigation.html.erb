@@ -1,13 +1,11 @@
 <%= link_to "Demo Renuo Ch", root_path, :class => 'brand' %>
 <ul class="nav">
-  <% nav = Navigation.where(name: 'Main Navigation').first %>
-  <% nav && nav.navigation_items.each do |ni| %>
+  <% NavigationItem.all.each do |ni| %>
       <li>
         <% if ni.page %>
         <%= link_to ni.label, ni.page %>
         <% else %>
-        <% controller, action = ni.target.split('#') %>
-        <%= link_to ni.label, url_for(controller: controller, action: action) %>
+        <%= link_to ni.label, ni.target %>
         <% end %>
       </li>
   <% end %>

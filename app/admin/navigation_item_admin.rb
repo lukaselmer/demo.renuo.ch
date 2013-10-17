@@ -5,11 +5,7 @@ module NavigationItemAdmin
       object_label_method :label
       edit do
         field :page
-        field :target, :enum do
-          enum do
-            NavigationItem::choosable_link_options
-          end
-        end
+        field :target
       end
 
       default_action do
