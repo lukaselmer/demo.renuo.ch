@@ -56,6 +56,13 @@ de:
       footer_navigation_item: *naviitem
       content_rich_text:
         content: Inhalt
+      user:
+        email: E-Mail
+        reset_password_sent_at: 'Passwort-Reset gesendet am'
+        remember_created_at: "'Eingeloggt bleiben' aktiviert am"
+        sign_in_count: "Anzahl Anmeldungen"
+        current_sign_in_at: "Eingeloggt am"
+        last_sign_in_at: "Zuletzt eingeloggt am"
     models:
       page:
         one: Seite
