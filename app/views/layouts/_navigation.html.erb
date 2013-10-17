@@ -1,4 +1,8 @@
-<%= link_to "Demo Renuo Ch", root_path, :class => 'brand' %>
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <span>Menu</span>
+</a>
+<div class="nav-collapse collapse">
+
 <ul class="nav">
   <% NavigationItem.all.each do |ni| %>
       <li>
@@ -31,3 +35,5 @@
     </li>
   <% end %>
 </ul>
+
+</div>

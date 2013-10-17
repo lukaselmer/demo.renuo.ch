@@ -10,37 +10,64 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <div class="navbar navbar-fixed-top">
+    <header>
+      <div class="container">
+          <div class="row">
+            <div class="span6">
+              <div class="logo">
+                <h1><a href="#">Renuo <span class="color">CMS Demo</span></a></h1>
+                <div class="hmeta">Webseitenverwaltung für jedermann</div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </header>
+    <div class="navbar">
       <nav class="navbar-inner">
         <div class="container">
           <%= render 'layouts/navigation' %>
         </div>
       </nav>
     </div>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
+    <div class="content">
+    <div class="container">
+       <div class="row">
+        <div class="span12">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="widgets">
+              <div class="span4">
+                <div class="fwidget">
+                    <h6>Links</h6>
+                    <ul>
+                      <% FooterNavigationItem.all.each do |ni| %>
+                          <li>
+                            <% if ni.page %>
+                                <%= link_to ni.label, ni.page %>
+                            <% else %>
+                                <%= link_to ni.label, ni.target %>
+                            <% end %>
+                          </li>
+                      <% end %>
+                    </ul>
+                </div>
+              </div>
+            </div>
             <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
+                <div class="copy">
+                    <h6>Renuo <span class="color">CMS</span></h6>
+                    <p>Copyright &copy; <a href="#">Renuo GmbH</a> - <a href="https://renuo.ch/ueber-uns">Über uns</a> | <a href="https://renuo.ch/kontakt">Kontakt</a></p>
+                </div>
             </div>
           </div>
-          <footer>
-            <ul class="nav">
-              <% FooterNavigationItem.all.each do |ni| %>
-                  <li>
-                    <% if ni.page %>
-                        <%= link_to ni.label, ni.page %>
-                    <% else %>
-                        <%= link_to ni.label, ni.target %>
-                    <% end %>
-                  </li>
-              <% end %>
-            </ul>
-          </footer>
         </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
+    </footer>
   </body>
 </html>

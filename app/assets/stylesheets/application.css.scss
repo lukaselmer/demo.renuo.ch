@@ -9,25 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require twb2theme/bootstrap
+ *= require twb2theme/font-awesome
+ *= require twb2theme/style
+ *= require twb2theme/green
+ *= require twb2theme/bootstrap-responsive
+
 */
-
-.content {
-  background-color: #eee;
-  padding: 20px;
-  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  box-shadow: 0 1px 2px rgba(0,0,0,.15);
-}
-
-
-footer{
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-  padding: 1em;
-  margin-top: 2em;
-}
