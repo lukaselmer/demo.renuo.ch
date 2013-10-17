@@ -85,10 +85,9 @@ de:
       user:
         one: User
         other: Users
-      # TODO neither is working
       ckeditor/attachment_file:
           one: Anhang
           other: Anhänge
-      ckeditor~picture:
+      ckeditor/picture:
         one: Bild
         other: Bilder
