@@ -3,7 +3,7 @@
 de:
   admin:
     home:
-      name: "Home"
+      name: "Webseite"
     pagination:
       previous: "&laquo; Vor"
       next: "Zurück &raquo;"
