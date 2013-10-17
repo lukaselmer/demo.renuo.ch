@@ -20,8 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 de:
-  hello: "Hello world"
-
   route:
     users:
       index: 'Alle Benutzer anzeigen'
@@ -37,7 +35,11 @@ de:
       navigation_item:
         page: Erstellt Link auf ein selbst angelegte Seite.
         target: 'Beispiel:<br/>Externer Link: <code>http://www.google.ch</code><br/>Interner Link: <code>/news/latest</code>'
-
+        title: 'Angezeigter Linktext'
+      footer_navigation_item:
+        page: Erstellt Link auf ein selbst angelegte Seite.
+        target: 'Beispiel:<br/>Externer Link: <code>http://www.google.ch</code><br/>Interner Link: <code>/news/latest</code>'
+        title: 'Angezeigter Linktext'
 
   activerecord:
     atrributes:
@@ -46,6 +48,8 @@ de:
       navigation_item:
         target: Beliebige Adresse
         page: Seite
+      content_rich_text:
+        content: Inhalt
     models:
       page:
         one: Seite
@@ -57,11 +61,11 @@ de:
         one: HTML Snippet
         other: HTML Snippets
       navigation_item:
-        one: Navi-Eintrag
-        other: Navi-Einträge
+        one: Hauptmenü
+        other: Hauptmenü
       footer_navigation_item:
-        one: Fusszeilen Navi-Eintrag
-        other: Fusszeilen Navi-Einträge
+        one: Fusszeile
+        other: Fusszeile
       role:
         one: Rolle
         other: Rollen

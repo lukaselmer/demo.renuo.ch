@@ -1,8 +1,18 @@
+// hide meaningless content heading
 .content>.page-header {
   display: none;
 }
 
 
+// hide filter tools
 #list .well{
   display: none;
+}
+.content>.nav-tabs>.dropdown:last-child{
+  display: none;
+}
+
+// list action links
+#list .last.links i{
+  font-size: 1.4em;
 }

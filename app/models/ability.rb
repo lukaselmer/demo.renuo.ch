@@ -5,8 +5,6 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.has_role? :admin
       can :manage, :all
-
-
     end
     #cannot :index, FooterNavigationItem # should only disable list tab, but removes also from navigation implicitly
 
