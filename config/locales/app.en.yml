@@ -29,13 +29,3 @@ en:
   nav:
     users:
       index: 'User Administration'
-
-
-  activerecord:
-    models:
-      content_rich_text:
-        one: HTML Snippet
-        other: HTML Snippets
-      navigation_item:
-        one: Nav item
-        other: Nav items

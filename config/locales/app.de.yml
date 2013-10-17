@@ -41,13 +41,19 @@ de:
         target: 'Beispiel:<br/>Externer Link: <code>http://www.google.ch</code><br/>Interner Link: <code>/news/latest</code>'
         title: 'Angezeigter Linktext'
 
+  attributes:
+    created_at: 'Erstellt am'
+    updated_at: 'Geändert am'
   activerecord:
-    atrributes:
+    attributes:
       page:
-        title: Seitenname
-      navigation_item:
+        title: Seitenname (Browser Fenster)
+        content_types: Inhalte
+      navigation_item: &naviitem
+        title: Titel
         target: Beliebige Adresse
         page: Seite
+      footer_navigation_item: *naviitem
       content_rich_text:
         content: Inhalt
     models:
@@ -73,10 +79,9 @@ de:
         one: User
         other: Users
       # TODO neither is working
-      ckeditor:
-        attachment_file:
+      ckeditor/attachment_file:
           one: Anhang
           other: Anhänge
-      ckeditor/picture:
+      ckeditor~picture:
         one: Bild
         other: Bilder

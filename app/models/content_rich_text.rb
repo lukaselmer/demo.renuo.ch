@@ -5,7 +5,7 @@ class ContentRichText < ActiveRecord::Base
 
   rails_admin do
     navigation_label 'Inhalte'
-    object_label_method :label
+    object_label_method :instance_label
     weight -2
 
     edit do
@@ -25,7 +25,8 @@ class ContentRichText < ActiveRecord::Base
 
   end
 
-  def label
+  def instance_label
     name
   end
+
 end

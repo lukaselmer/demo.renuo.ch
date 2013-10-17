@@ -8,8 +8,6 @@ class FooterNavigationItem < ActiveRecord::Base
   include NavigationItemAdmin
 
   def label
-    #return self.class.model_name.human if new_record?
-    #return page.title if page
     title
   end
 

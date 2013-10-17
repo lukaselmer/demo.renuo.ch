@@ -10,18 +10,11 @@ module NavigationItemAdmin
           end
         end
         field :page do
-          label do
-            I18n.t('activerecord.atrributes.navigation_item.page')
-          end
           help do
             i18n_help_lookup(self)
           end
         end
         field :target do
-          label do
-            I18n.t('activerecord.atrributes.navigation_item.target')
-          end
-
           help do
             i18n_help_lookup(self)
           end

@@ -45,14 +45,13 @@ module RailsAdmin
   end
 end
 
-
 RailsAdmin.config do |config|
 
 
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['RenuoCMS Demo', 'Backend']
+  config.main_app_name = ['Renuo CMS', 'Demo']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
@@ -105,17 +104,17 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :resource, :polymorphic_association         # Hidden 
-  #     configure :users, :has_and_belongs_to_many_association 
+  #     configure :resource, :polymorphic_association         # Hidden
+  #     configure :users, :has_and_belongs_to_many_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :name, :string 
-  #     configure :resource_id, :integer         # Hidden 
-  #     configure :resource_type, :string         # Hidden 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :name, :string
+  #     configure :resource_id, :integer         # Hidden
+  #     configure :resource_type, :string         # Hidden
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
@@ -151,37 +150,37 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :invited_by, :polymorphic_association         # Hidden 
-  #     configure :roles, :has_and_belongs_to_many_association 
+  #     configure :invited_by, :polymorphic_association         # Hidden
+  #     configure :roles, :has_and_belongs_to_many_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :email, :string 
-  #     configure :password, :password         # Hidden 
-  #     configure :password_confirmation, :password         # Hidden 
-  #     configure :reset_password_token, :string         # Hidden 
-  #     configure :reset_password_sent_at, :datetime 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :string 
-  #     configure :last_sign_in_ip, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :name, :string 
-  #     configure :confirmation_token, :string 
-  #     configure :confirmed_at, :datetime 
-  #     configure :confirmation_sent_at, :datetime 
-  #     configure :unconfirmed_email, :string 
-  #     configure :invitation_token, :string 
-  #     configure :invitation_created_at, :datetime 
-  #     configure :invitation_sent_at, :datetime 
-  #     configure :invitation_accepted_at, :datetime 
-  #     configure :invitation_limit, :integer 
-  #     configure :invited_by_id, :integer         # Hidden 
-  #     configure :invited_by_type, :string         # Hidden 
+  #     configure :id, :integer
+  #     configure :email, :string
+  #     configure :password, :password         # Hidden
+  #     configure :password_confirmation, :password         # Hidden
+  #     configure :reset_password_token, :string         # Hidden
+  #     configure :reset_password_sent_at, :datetime
+  #     configure :remember_created_at, :datetime
+  #     configure :sign_in_count, :integer
+  #     configure :current_sign_in_at, :datetime
+  #     configure :last_sign_in_at, :datetime
+  #     configure :current_sign_in_ip, :string
+  #     configure :last_sign_in_ip, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
+  #     configure :name, :string
+  #     configure :confirmation_token, :string
+  #     configure :confirmed_at, :datetime
+  #     configure :confirmation_sent_at, :datetime
+  #     configure :unconfirmed_email, :string
+  #     configure :invitation_token, :string
+  #     configure :invitation_created_at, :datetime
+  #     configure :invitation_sent_at, :datetime
+  #     configure :invitation_accepted_at, :datetime
+  #     configure :invitation_limit, :integer
+  #     configure :invited_by_id, :integer         # Hidden
+  #     configure :invited_by_type, :string         # Hidden
 
   #   # Cross-section configuration:
 
