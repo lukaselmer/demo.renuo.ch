@@ -16,3 +16,20 @@
  *= require twb2theme/bootstrap-responsive
 
 */
+
+
+.content-type{
+  position: relative;
+}
+.content-type>a{
+  display: none;
+}
+.content-type:hover>a{
+  display: block;
+  font-size: 0.75em;
+  position: absolute;
+  background-color: white;
+}
+.content-type>a.edit{
+  color: #fe781e;
+}
