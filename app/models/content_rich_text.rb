@@ -4,7 +4,7 @@ class ContentRichText < ActiveRecord::Base
   has_paper_trail
 
   validates_presence_of :name, :content
-  validates_uniqueness_of :key
+  validates_uniqueness_of :key, if: 'key.present?'
 
   scope :predefined, -> (key) {
     ContentRichText.where(key: key).first

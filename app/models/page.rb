@@ -3,7 +3,7 @@ class Page < ActiveRecord::Base
   has_many :content_types, through: :page_contents, source: :content_type, source_type: 'ContentRichText'
 
   validates_presence_of :title
-  validates_uniqueness_of :key
+  validates_uniqueness_of :key, if: "key.present?"
 
   scope :predefined, -> (key) {
     Page.where(key: key).first
