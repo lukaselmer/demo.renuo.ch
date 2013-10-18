@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131018071533) do
+ActiveRecord::Schema.define(version: 20131018075014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(version: 20131018071533) do
   create_table "content_rich_texts", force: true do |t|
     t.string "content"
     t.string "name",    default: "", null: false
+    t.string "key",     default: ""
   end
+
+  add_index "content_rich_texts", ["key"], name: "index_content_rich_texts_on_key", using: :btree
 
   create_table "footer_navigation_items", force: true do |t|
     t.integer  "page_id"
@@ -75,10 +78,10 @@ ActiveRecord::Schema.define(version: 20131018071533) do
     t.string   "title",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name",       default: ""
+    t.string   "key",        default: ""
   end
 
-  add_index "pages", ["name"], name: "index_pages_on_name", using: :btree
+  add_index "pages", ["key"], name: "index_pages_on_key", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"

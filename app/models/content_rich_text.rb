@@ -4,6 +4,11 @@ class ContentRichText < ActiveRecord::Base
   has_paper_trail
 
   validates_presence_of :name, :content
+  validates_uniqueness_of :key
+
+  scope :predefined, -> (key) {
+    ContentRichText.where(key: key).first
+  }
 
   rails_admin do
     parent Page

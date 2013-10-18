@@ -3,10 +3,10 @@ class Page < ActiveRecord::Base
   has_many :content_types, through: :page_contents, source: :content_type, source_type: 'ContentRichText'
 
   validates_presence_of :title
-  validates_uniqueness_of :name
+  validates_uniqueness_of :key
 
-  scope :predefined, -> (name) {
-    Page.where(name: name).first
+  scope :predefined, -> (key) {
+    Page.where(key: key).first
   }
 
   rails_admin do

@@ -6,7 +6,13 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     end
-    #cannot :index, FooterNavigationItem # should only disable list tab, but removes also from navigation implicitly
+
+    cannot :destroy, ContentRichText do |c|
+      c.key.present?
+    end
+    cannot :destroy, Page do |c|
+      c.key.present?
+    end
 
     # Define abilities for the passed in user here. For example:
     #

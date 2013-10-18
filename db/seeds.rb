@@ -19,4 +19,5 @@ user.confirm!
 user.add_role :admin
 
 
-Page.create({name:'home',title:'Renuo CMS Demo - Startseite'})
+Page.create({key:'home',title:'Renuo CMS Demo - Startseite'})
+ContentRichText.create({key: 'copyright', name:'Copyright Fusszeile', content: '<p>Copyright &copy; <a href="https://www.renuo.ch">Renuo GmbH</a> - <a href="https://www.renuo.ch/ueber-uns">Über uns</a> | <a href="https://www.renuo.ch/kontakt">Kontakt</a></p>'.html_safe})
