@@ -79,5 +79,5 @@ pickle-email-*.html
 
 
 source_maps
-assets
+public/assets
 ckeditor_assets
