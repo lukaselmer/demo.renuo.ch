@@ -1,3 +1,5 @@
+// ugly but required, otherwise custom/ui is not compiled
+// be sure to regularly sync this file with current gem version
 //=  require 'jquery'
 //=  require 'jquery_ujs'
 //=  require 'rails_admin/jquery.remotipart.fixed'
