@@ -1,6 +1,10 @@
 module NavigationItemAdmin
 
   def self.included model
+
+    model.validates_presence_of :page, if: -> {target.blank?}
+    model.validates_presence_of :target, if: -> {page.blank?}
+
     model.rails_admin do
       object_label_method :label
       edit do

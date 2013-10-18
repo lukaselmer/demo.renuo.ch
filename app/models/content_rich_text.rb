@@ -3,10 +3,11 @@ class ContentRichText < ActiveRecord::Base
 
   has_paper_trail
 
+  validates_presence_of :name, :content
+
   rails_admin do
-    navigation_label 'Inhalte'
+    parent Page
     object_label_method :instance_label
-    weight -2
 
     edit do
       field :name

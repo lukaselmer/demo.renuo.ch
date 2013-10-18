@@ -207,6 +207,13 @@ RailsAdmin.config do |config|
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
   # end
 
+  config.model 'Ckeditor::Picture' do
+    navigation_label 'Dateiverwaltung'
+  end
+  config.model 'Ckeditor::AttachmentFile' do
+    navigation_label 'Dateiverwaltung'
+  end
+
   config.actions do
     # root actions
     dashboard # mandatory

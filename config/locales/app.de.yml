@@ -45,6 +45,15 @@ de:
     created_at: 'Erstellt am'
     updated_at: 'Geändert am'
   activerecord:
+    errors:
+      models:
+        navigation_item: &errornavi
+          attributes:
+            target:
+              blank: "oder 'Seite' ausfüllen."
+            page:
+              blank: "oder 'Beliebige Adresse' ausfüllen."
+        footer_navigation_item: *errornavi
     attributes:
       page:
         title: Seitenname (Browser Fenster)
@@ -71,8 +80,8 @@ de:
         one: Navigation
         other: Navigationen
       content_rich_text:
-        one: HTML Snippet
-        other: HTML Snippets
+        one: Artikel
+        other: Artikel
       navigation_item:
         one: Hauptmenü
         other: Hauptmenü
@@ -85,6 +94,9 @@ de:
       user:
         one: User
         other: Users
+      ckeditor:
+        one: hoho
+        others: hohos
       ckeditor/attachment_file:
           one: Anhang
           other: Anhänge
