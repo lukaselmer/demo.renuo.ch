@@ -72,6 +72,8 @@ de:
         sign_in_count: "Anzahl Anmeldungen"
         current_sign_in_at: "Eingeloggt am"
         last_sign_in_at: "Zuletzt eingeloggt am"
+        password: 'Passwort'
+        password_confirmation: 'Passwort wiederholen'
     models:
       page:
         one: Seite

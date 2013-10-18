@@ -9,9 +9,9 @@
 #
 MANDRILL_USERNAME: Your_Username
 MANDRILL_API_KEY: Your_API_Key
-ADMIN_NAME: First User
-ADMIN_EMAIL: user@example.com
-ADMIN_PASSWORD: changeme
+ADMIN_NAME: Administrator
+ADMIN_EMAIL: cmsadmin@renuo.ch
+ADMIN_PASSWORD: cmsdemo
 ROLES: [admin, user, VIP]
 RAILS_SECRET_TOKEN: very_long_string___use_rake_secret___
 APP_DOMAIN: demo.renuo.ch
