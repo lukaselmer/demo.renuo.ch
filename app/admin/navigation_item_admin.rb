@@ -35,7 +35,7 @@ module NavigationItemAdmin
         :nestable
       end
 
-      weight -1
+      weight -3
 
       nestable_tree({
                         max_depth: 1,

@@ -209,6 +209,7 @@ RailsAdmin.config do |config|
 
   config.model 'Ckeditor::Picture' do
     navigation_label 'Dateiverwaltung'
+    weight -2
   end
   config.model 'Ckeditor::AttachmentFile' do
     navigation_label 'Dateiverwaltung'

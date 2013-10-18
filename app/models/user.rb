@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
 
   rails_admin do
     navigation_label 'User Management'
+    weight -1
   end
 end

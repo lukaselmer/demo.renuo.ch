@@ -11,7 +11,7 @@ class Page < ActiveRecord::Base
 
   rails_admin do
     navigation_label 'Inhalte'
-    weight -2
+    weight -4
 
     edit do
       field :title
