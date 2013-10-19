@@ -1,7 +1,11 @@
-module NavigationItemAdmin
+module NavigationItemGeneric
 
   def self.included model
 
+    model.belongs_to :page
+    model.has_ancestry
+
+    model.validates_presence_of :title
     model.validates_presence_of :page, if: -> {target.blank?}
     model.validates_presence_of :target, if: -> {page.blank?}
 
@@ -31,5 +35,10 @@ module NavigationItemAdmin
                         position_field: :position
                     })
     end
+
+    def label
+      title
+    end
+
   end
 end
