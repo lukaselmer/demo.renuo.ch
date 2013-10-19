@@ -7,22 +7,11 @@ module NavigationItemAdmin
 
     model.rails_admin do
       object_label_method :label
+
       edit do
-        field :title do
-          help do
-            i18n_help_lookup(self)
-          end
-        end
-        field :page do
-          help do
-            i18n_help_lookup(self)
-          end
-        end
-        field :target do
-          help do
-            i18n_help_lookup(self)
-          end
-        end
+        field :title
+        field :page
+        field :target
       end
 
       list do
@@ -31,7 +20,7 @@ module NavigationItemAdmin
         field :target
       end
 
-      default_action do
+      navigation_action do
         :nestable
       end
 

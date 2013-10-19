@@ -1,10 +1,11 @@
 # RailsAdmin config file. Generated on October 15, 2013 09:26
 # See github.com/sferik/rails_admin for more informations
 
+# start navigation_action
 module RailsAdmin
   module Config
     Model.class_eval do
-      register_instance_option :default_action do
+      register_instance_option :navigation_action do
         :index
       end
     end
@@ -14,7 +15,8 @@ module RailsAdmin
     def navigation nodes_stack, nodes, level=0
       nodes.map do |node|
         model_param = node.abstract_model.to_param
-        url = url_for(:action => node.default_action, :controller => 'rails_admin/main', :model_name => model_param)
+        # the only thing changed here is the next lines action => value
+        url = url_for(:action => node.navigation_action, :controller => 'rails_admin/main', :model_name => model_param)
         level_class = " nav-level-#{level}" if level > 0
         nav_icon = node.navigation_icon ? %{<i class="#{node.navigation_icon}"></i>}.html_safe : ''
 
@@ -26,24 +28,38 @@ module RailsAdmin
     end
   end
 end
+# end navigation_action
 
+# start i18n
 module RailsAdmin
   module Config
     module Fields
       module Types
         Base.class_eval do
-          def i18n_help_lookup (field)
-            model = field.abstract_model.model_name.underscore
-            field = field.name
-            model_lookup = "admin.help.#{model}.#{field}".to_sym
-            field_lookup = "admin.help.#{field}".to_sym
-            I18n.t(model_lookup, :help => help, :default => [field_lookup, help]).html_safe
+          alias :org_help :help
+          register_instance_option :help do
+            generic_i18n_help_lookup
+          end
+
+          def generic_i18n_help_lookup
+            model = self.abstract_model.model_name.underscore
+            model_lookup = "admin.help.#{model}.#{name}".to_sym
+            field_lookup = "admin.help.#{name}".to_sym
+            I18n.t(model_lookup, default: [field_lookup, org_help]).html_safe
           end
         end
+        String.class_eval do
+          alias :org_help :help
+          register_instance_option :help do
+             generic_i18n_help_lookup
+          end
+        end
+        # other field types do not override help or overrides do not use i18n
       end
     end
   end
 end
+# end i18n
 
 RailsAdmin.config do |config|
 
