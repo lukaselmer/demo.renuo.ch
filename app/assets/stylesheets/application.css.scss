@@ -23,12 +23,12 @@
 }
 .content-type>a{
   display: none;
-}
-.content-type:hover>a{
-  display: block;
   font-size: 0.75em;
   position: absolute;
   background-color: white;
+}
+.content-type:hover>a{
+  display: block;
 }
 .content-type>a.edit{
   color: #fe781e;
