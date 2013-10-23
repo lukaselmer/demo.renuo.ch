@@ -14,22 +14,6 @@
  *= require twb2theme/style
  *= require twb2theme/blue
  *= require twb2theme/bootstrap-responsive
-
+ *= require theme_overrides
+ *= require public
 */
-
-
-.content-type{
-  position: relative;
-}
-.content-type>a{
-  display: none;
-  font-size: 0.75em;
-  position: absolute;
-  background-color: white;
-}
-.content-type:hover>a{
-  display: block;
-}
-.content-type>a.edit{
-  color: #fe781e;
-}

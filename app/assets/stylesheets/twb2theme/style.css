@@ -1507,10 +1507,10 @@ ul.hover-block li img {
 	margin-top: 20px;
 }
 
-.content ul{
-	list-style-type: none;
-	margin-left: 0px;
-}
+/*.content ul{*/
+	/*list-style-type: none;*/
+	/*margin-left: 0px;*/
+/*}*/
 
 .content ul li{
 	padding: 5px 0px;

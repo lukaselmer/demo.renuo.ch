@@ -1,0 +1,15 @@
+.content-type{
+  position: relative;
+}
+.content-type>a.cms-action{
+  display: none;
+  font-size: 0.75em;
+  position: absolute;
+  background-color: white;
+}
+.content-type:hover>a.cms-action{
+  display: block;
+}
+.content-type>a.edit{
+  color: #fe781e;
+}
