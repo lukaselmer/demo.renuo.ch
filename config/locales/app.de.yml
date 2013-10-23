@@ -71,6 +71,7 @@ de:
         last_sign_in_at: "Zuletzt eingeloggt am"
         password: 'Passwort'
         password_confirmation: 'Passwort wiederholen'
+        remember_me: 'Angemeldet bleiben'
     models:
       page:
         one: Seite
