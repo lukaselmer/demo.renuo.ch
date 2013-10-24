@@ -30,37 +30,6 @@ module RailsAdmin
 end
 # end navigation_action
 
-# start i18n
-module RailsAdmin
-  module Config
-    module Fields
-      module Types
-        Base.class_eval do
-          alias :org_help :help
-          register_instance_option :help do
-            generic_i18n_help_lookup
-          end
-
-          def generic_i18n_help_lookup
-            model = self.abstract_model.model_name.underscore
-            model_lookup = "admin.help.#{model}.#{name}".to_sym
-            field_lookup = "admin.help.#{name}".to_sym
-            I18n.t(model_lookup, default: [field_lookup, org_help]).html_safe
-          end
-        end
-        String.class_eval do
-          alias :org_help :help
-          register_instance_option :help do
-             generic_i18n_help_lookup
-          end
-        end
-        # other field types do not override help or overrides do not use i18n
-      end
-    end
-  end
-end
-# end i18n
-
 RailsAdmin.config do |config|
 
 
