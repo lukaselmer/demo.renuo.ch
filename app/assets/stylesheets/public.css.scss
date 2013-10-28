@@ -13,3 +13,10 @@
 .content-type>a.edit{
   color: #fe781e;
 }
+
+.modal.modal-wide {
+  width: 50%;
+  left: 25%; /* (100%-width)/2 */
+  margin-left:auto;
+  margin-right:auto;
+}
