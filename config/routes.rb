@@ -4,5 +4,6 @@ DemoRenuoCh::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root :to => "home#index"
   resources :pages, only: [:show]
+  resources :contacts, only: [:index]
   resources :users
 end
