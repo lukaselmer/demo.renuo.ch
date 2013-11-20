@@ -2,12 +2,12 @@
     nav_class ||= ''
 %>
 <ul class="<%= nav_class %>">
-<% item_class.all.each do |ni| %>
+<% item_class.flat.each do |ni| %>
 <li>
-  <% if ni.page %>
-      <%= link_to ni.label, ni.page %>
-  <% else %>
+  <% if ni.target %>
       <%= link_to ni.label, ni.target %>
+  <% else %>
+      <%= link_to ni.label, ni.page %>
   <% end %>
 </li>
 <% end %>

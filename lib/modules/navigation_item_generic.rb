@@ -9,6 +9,10 @@ module NavigationItemGeneric
     model.validates_presence_of :page, if: -> {target.blank?}
     model.validates_presence_of :target, if: -> {page.blank?}
 
+    model.scope :flat, ->  {
+      model.order(:position)
+    }
+
     model.rails_admin do
       object_label_method :label
 
