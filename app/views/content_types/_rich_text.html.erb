@@ -1,4 +1,4 @@
-<div class="content-type rich-text">
+<div class="content-type rich-text <%= can?(:edit, record) ? 'editable' : '' %>">
     <% if can? :edit, record %>
         <%= link_to 'Bearbeiten', rails_admin.edit_path(model_name: record.class.model_name.i18n_key, id: record.to_param), class: 'edit cms-action', 'data-no-turbolink'=> true  %>
     <% end %>

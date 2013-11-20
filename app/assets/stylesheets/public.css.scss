@@ -3,20 +3,27 @@
 }
 .content-type>a.cms-action{
   display: none;
-  font-size: 0.75em;
+  font-size: 0.9em;
   position: absolute;
   background-color: white;
+  padding: 4px;
+  margin-left: 1px;
+  margin-top: 1px;
 }
 .content-type:hover>a.cms-action{
   display: block;
+}
+.content-type.editable:hover{
+  background-color: rgba(0,0,0, 0.2);
+  transition: all 0.5s 0.25s;
 }
 .content-type>a.edit{
   color: #fe781e;
 }
 
 .modal.modal-wide {
-  width: 50%;
-  left: 25%; /* (100%-width)/2 */
+  width: 75%;
+  left: 12.5%; /* (100%-width)/2 */
   margin-left:auto;
   margin-right:auto;
 }
