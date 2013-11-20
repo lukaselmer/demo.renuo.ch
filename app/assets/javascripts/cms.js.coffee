@@ -19,6 +19,9 @@ _getModal = ->
           backdrop: true,
           show: true
       .on 'hidden', ->
+        rte = $(this).find("[data-richtext='ckeditor']")
+        if (rte.length)
+          window.CKEDITOR.instances[rte[0].id].destroy()
         dialog.remove()
         dialog = null
 
