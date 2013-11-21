@@ -4,7 +4,7 @@
 <ul class="<%= nav_class %>">
 <% item_class.flat.each do |ni| %>
 <li>
-  <% if ni.target %>
+  <% if ni.target.present? %>
       <%= link_to ni.label, ni.target %>
   <% else %>
       <%= link_to ni.label, ni.page %>
