@@ -21,8 +21,7 @@
 
 CKEDITOR.editorConfig = function( config )
 {
-    // TODO wie geht das in production?
-    config.contentsCss = ['/assets/application.css']
+    config.contentsCss = ['<%= asset_path('application.css') %>']
 
     config.toolbar = 'Basic';
     config.toolbar_Basic =
