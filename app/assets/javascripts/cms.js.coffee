@@ -67,7 +67,7 @@ _bindFormEvents= ->
 
 
 $(document).on 'click', '.content-type.rich-text>.cms-action.edit', (e) ->
-  e.preventDefault;
+  e.preventDefault();
 
   url = this.href
 
