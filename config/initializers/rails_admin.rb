@@ -202,7 +202,9 @@ RailsAdmin.config do |config|
 
   config.actions do
     # root actions
-    dashboard # mandatory
+    dashboard do
+      statistics false
+    end
               # collection actions
     index
     new
