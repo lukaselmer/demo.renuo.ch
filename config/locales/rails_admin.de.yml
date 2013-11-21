@@ -94,11 +94,6 @@ de:
         title: "Historie von %{model_label} '%{object_label}'"
         menu: "Historie"
         breadcrumb: "Historie"
-      nestable:
-        title: 'Sortieren von %{model_label}'
-        menu: 'Sortieren'
-        breadcrumb: 'Sortieren'
-        success: 'Gespeichert'
     form:
       cancel: "Abbrechen"
       basic_info: "Grundlegende Informationen"
