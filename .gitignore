@@ -80,4 +80,5 @@ pickle-email-*.html
 
 source_maps
 public/assets
-ckeditor_assets
+public/ckeditor_assets/attachments
+public/ckeditor_assets/pictures
