@@ -75,7 +75,7 @@ CKEDITOR.editorConfig = function(config)
     };
 
     // besser wäre wenn custom config überschrieben werden könnte, anstatt config.js, evtl. pull request erstellen
-    config.customConfig = '/assets/ckeditor/custom_config.js'
+    config.customConfig = '/assets/ckeditor/custom_config.js' // das problem, dass scho config.js ohne digest angefragt wird, das heisst: <%= asset_path('ckeditor/custom_config.js') %> wird ohne digest generiert => not found
 
     // Integrate Rails CSRF token into file upload dialogs (link, image, attachment and flash)
     CKEDITOR.on( 'dialogDefinition', function( ev ){

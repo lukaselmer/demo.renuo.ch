@@ -217,7 +217,7 @@ RailsAdmin.config do |config|
       #visible false
     end
     delete
-              #history_show
+    history_show
               #show_in_app
     nestable
   end
