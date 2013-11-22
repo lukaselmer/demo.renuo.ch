@@ -40,6 +40,7 @@ de:
       changes: "Änderungen"
       created_at: "Datum/uhrzeit"
       item: "Element"
+      items: "Elemente"
       message: "Meldung"
     actions:
       dashboard:
