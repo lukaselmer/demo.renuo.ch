@@ -29,6 +29,14 @@ class ContentRichText < ActiveRecord::Base
       end
     end
 
+    show do
+      field :content do
+        pretty_value do
+          value.html_safe
+        end
+      end
+    end
+
   end
 
   def instance_label
