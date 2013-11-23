@@ -23,6 +23,7 @@ gem 'rails_admin', github: 'ideadapt/rails_admin'
 gem 'ancestry'
 gem 'rails_admin_nestable'
 gem 'ckeditor'
+gem 'slim'
 gem 'paperclip'
 gem 'paper_trail', '>= 3.0.0.beta1'
 

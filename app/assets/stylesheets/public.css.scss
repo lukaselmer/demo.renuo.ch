@@ -1,29 +1,21 @@
 .content-type{
   position: relative;
 }
-.content-type>a.cms-action{
-  display: none;
-  font-size: 0.9em;
-  position: absolute;
-  background-color: white;
-  padding: 4px;
-  margin-left: 1px;
-  margin-top: 1px;
-}
-.content-type:hover>a.cms-action{
-  display: block;
-}
+
 .content-type.editable:hover{
-  background-color: rgba(0,0,0, 0.2);
-  transition: all 0.5s 0.25s;
-}
-.content-type>a.edit{
-  color: #fe781e;
+  outline: 2px dashed rgba(18, 196, 0, 0.3);
+  transition: all 0s 0.25s;
 }
 
-.modal.modal-wide {
-  width: 75%;
-  left: 12.5%; /* (100%-width)/2 */
-  margin-left:auto;
-  margin-right:auto;
+.content-type.editable{
+  transition: background-color 0.5s 0s;
+}
+
+.editable.has-error{
+  background-color: rgba(221, 71, 38, 0.10);
+  transition: all 0.5s 0s;
+}
+.editable.update-success{
+  background-color: rgba(18, 196, 0, 0.1);
+  transition: all 0.5s 0s;
 }

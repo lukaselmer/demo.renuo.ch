@@ -1,0 +1,7 @@
+- if can?(:edit, record)
+  - editable_class = 'editable'
+  - contenteditable = 'true'
+  - update_url = rails_admin.edit_url(model_name: record.class.model_name.singular, id: record.to_param)
+
+div class="content-type rich-text #{editable_class}" data-update-url="#{update_url}" data-field="#{record.class.model_name.singular}[content]" contenteditable="#{contenteditable}"
+  = record.content.html_safe
