@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 6ac7f1eb21cbf439fabeccc63ea804fd8589d68a
+  specs:
+    ckeditor (4.0.6)
+      mime-types
+      orm_adapter
+
+GIT
   remote: git://github.com/ideadapt/rails_admin.git
   revision: 0c89d379d3a9b199c8c6a6acc9de580e9fdf6ba7
   specs:
@@ -84,9 +92,6 @@ GEM
       xpath (~> 2.0)
     celluloid (0.15.2)
       timers (~> 1.1.0)
-    ckeditor (4.0.6)
-      mime-types
-      orm_adapter
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.3)
@@ -340,7 +345,7 @@ DEPENDENCIES
   binding_of_caller
   cancan
   capybara
-  ckeditor
+  ckeditor!
   cocoon
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)

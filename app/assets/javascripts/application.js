@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require ckeditor/override
+//= require ckeditor/init
 //= require ckeditor/ckeditor
 //= require cms
 
