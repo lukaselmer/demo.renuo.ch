@@ -74,7 +74,7 @@ CKEDITOR.editorConfig = function(config)
         return url + ( ( url.indexOf( "?" ) != -1 ) ? "&" : "?" ) + queryString.join( "&" );
     };
 
-    config.customConfig = '<%= asset_path('ckeditor/custom_config.js') %>'; // das problem, dass scho config.js ohne digest angefragt wird, das heisst: <%= asset_path('ckeditor/custom_config.js') %> wird ohne digest generiert => not found
+    config.customConfig = '<%= asset_path('ckeditor/custom_config.js') %>';
 
     // Integrate Rails CSRF token into file upload dialogs (link, image, attachment and flash)
     CKEDITOR.on( 'dialogDefinition', function( ev ){
