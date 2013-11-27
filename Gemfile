@@ -25,6 +25,7 @@ gem 'rails_admin_nestable'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'slim'
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'paper_trail', '>= 3.0.0.beta1'
 
 group :development do
