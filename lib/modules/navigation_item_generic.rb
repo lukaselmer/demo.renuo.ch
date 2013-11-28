@@ -5,6 +5,9 @@ module NavigationItemGeneric
     model.belongs_to :page
     model.has_ancestry
 
+    model.translates :title
+    model.accepts_nested_attributes_for :translations, :allow_destroy => true
+
     model.validates_presence_of :title
     model.validates_presence_of :page, if: -> {target.blank?}
     model.validates_presence_of :target, if: -> {page.blank?}
@@ -31,7 +34,10 @@ module NavigationItemGeneric
       object_label_method :label
 
       edit do
-        field :title
+        field :translations do
+          # prevent help text below tab pane
+          help false
+        end
         field :page
         field :target
       end

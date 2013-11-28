@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127182524) do
+ActiveRecord::Schema.define(version: 20131128133303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 20131127182524) do
 
   add_index "content_rich_texts", ["key"], name: "index_content_rich_texts_on_key", using: :btree
 
+  create_table "footer_navigation_item_translations", force: true do |t|
+    t.integer  "footer_navigation_item_id", null: false
+    t.string   "locale",                    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+  end
+
+  add_index "footer_navigation_item_translations", ["footer_navigation_item_id"], name: "index_7dac3846e5fb735c94bd62c47a9a0df79fda1d43", using: :btree
+  add_index "footer_navigation_item_translations", ["locale"], name: "index_footer_navigation_item_translations_on_locale", using: :btree
+
   create_table "footer_navigation_items", force: true do |t|
     t.integer  "page_id"
     t.string   "target"
@@ -63,6 +74,17 @@ ActiveRecord::Schema.define(version: 20131127182524) do
   end
 
   add_index "footer_navigation_items", ["ancestry"], name: "index_footer_navigation_items_on_ancestry", using: :btree
+
+  create_table "navigation_item_translations", force: true do |t|
+    t.integer  "navigation_item_id", null: false
+    t.string   "locale",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+  end
+
+  add_index "navigation_item_translations", ["locale"], name: "index_navigation_item_translations_on_locale", using: :btree
+  add_index "navigation_item_translations", ["navigation_item_id"], name: "index_navigation_item_translations_on_navigation_item_id", using: :btree
 
   create_table "navigation_items", force: true do |t|
     t.integer  "page_id"

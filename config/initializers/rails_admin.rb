@@ -224,12 +224,40 @@ RailsAdmin.config do |config|
   config.model 'ContentRichText::Translation' do
     visible false
     configure :locale, :hidden
-    #do
-    #  visible false
-    #end
     include_fields :locale, :content
     edit do
       field :content, :ck_editor
+      field :locale do
+        help false
+      end
+    end
+  end
+
+  config.model 'NavigationItem::Translation' do
+    visible false
+    configure :locale, :hidden
+    include_fields :locale, :title
+    edit do
+      # without this group declaration the :default group is not evaluated to be visible ... :/
+      group :default do
+        visible true
+      end
+      field :title
+      field :locale do
+        help false
+      end
+    end
+  end
+
+  config.model 'FooterNavigationItem::Translation' do
+    visible false
+    configure :locale, :hidden
+    include_fields :locale, :title
+    edit do
+      group :default do
+        visible true
+      end
+      field :title
       field :locale do
         help false
       end
