@@ -27,6 +27,8 @@ gem 'slim'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'paper_trail', '>= 3.0.0.beta1'
+gem 'globalize', '~> 4.0.0.alpha.2'
+gem 'rails_admin_globalize_field'
 
 group :development do
   gem 'better_errors'

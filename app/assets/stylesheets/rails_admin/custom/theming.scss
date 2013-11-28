@@ -1,4 +1,20 @@
-// no asset pipelin in here
+//= require rails_admin/ra.globalize_tabs
+
+// rails_admin_globalize_field
+.globalize_tabs_type.translations_field>label{
+  display: none;
+}
+
+.globalize_tabs_type.translations_field .nav-tabs a{
+  text-transform: uppercase;
+}
+
+
+// less border on tab pane
+body.rails_admin .form-horizontal .tab-content .tab-pane {
+  border-left: 2px solid #049cdb;
+  padding-left: 7px;
+}
 
 
 // hide meaningless content heading
@@ -14,6 +30,7 @@
 .content>.nav-tabs>.dropdown:last-child{
   display: none;
 }
+
 
 // list action links
 #list .last.links i{

@@ -1,6 +1,9 @@
 class ContentRichText < ActiveRecord::Base
   has_many :page_content, as: :content_type
 
+  translates :content
+  accepts_nested_attributes_for :translations, :allow_destroy => true
+
   has_paper_trail
 
   validates_presence_of :name, :content
@@ -16,7 +19,10 @@ class ContentRichText < ActiveRecord::Base
 
     edit do
       field :name
-      field :content, :ck_editor
+      field :translations do
+        # prevent help text below tab pane
+        help false
+      end
     end
 
     list do

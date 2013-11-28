@@ -60,7 +60,8 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['Role', 'User']
 
   # Include specific models (exclude the others):
-  config.included_models = [Role, User, Page, ContentRichText, NavigationItem, FooterNavigationItem, Ckeditor::AttachmentFile, Ckeditor::Picture]
+  config.included_models = [Role, User, Page, ContentRichText, ContentRichText::Translation,
+                            NavigationItem, FooterNavigationItem, Ckeditor::AttachmentFile, Ckeditor::Picture]
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -200,25 +201,37 @@ RailsAdmin.config do |config|
     navigation_label 'Dateiverwaltung'
   end
 
+  config.model 'ContentRichText::Translation' do
+    visible false
+    # hide entire field including help block
+    configure :locale do
+      visible false
+    end
+    include_fields :locale, :content
+    edit do
+      field :content, :ck_editor
+    end
+  end
+
   config.actions do
-    # root actions
+    #root actions
     dashboard do
       statistics false
     end
-              # collection actions
+    #collection actions
     index
     new
-              #export
-              #history_index
+    #export
+    #history_index
     bulk_delete
-              # member actions
+    #member actions
     show
     edit do
-      #visible false
+    #visible false
     end
     delete
     history_show
-              #show_in_app
+    #show_in_app
     nestable
   end
 

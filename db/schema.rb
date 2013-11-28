@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120093449) do
+ActiveRecord::Schema.define(version: 20131127182524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20131120093449) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "content_rich_text_translations", force: true do |t|
+    t.integer  "content_rich_text_id", null: false
+    t.string   "locale",               null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "content"
+  end
+
+  add_index "content_rich_text_translations", ["content_rich_text_id"], name: "index_content_rich_text_translations_on_content_rich_text_id", using: :btree
+  add_index "content_rich_text_translations", ["locale"], name: "index_content_rich_text_translations_on_locale", using: :btree
 
   create_table "content_rich_texts", force: true do |t|
     t.text   "content"

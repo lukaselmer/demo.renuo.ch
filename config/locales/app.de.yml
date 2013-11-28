@@ -60,7 +60,7 @@ de:
         target: Beliebige Adresse
         page: Seite
       footer_navigation_item: *naviitem
-      content_rich_text:
+      content_rich_text/translation:
         content: Inhalt
       user:
         email: E-Mail
