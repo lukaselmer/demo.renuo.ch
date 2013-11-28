@@ -5,7 +5,7 @@
 <% item_class.flat.each do |ni| %>
 <li>
   <% if ni.target.present? %>
-      <%= link_to ni.label, ni.target %>
+      <%= link_to ni.label, ni.localized_target(I18n.locale) %>
   <% else %>
       <%= link_to ni.label, ni.page %>
   <% end %>
