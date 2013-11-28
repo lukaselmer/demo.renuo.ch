@@ -44,5 +44,7 @@ module DemoRenuoCh
     config.i18n.available_locales = [:en, :de]
     config.i18n.default_locale = :de
 
+    config.assets.initialize_on_precompile = false
+
   end
 end
