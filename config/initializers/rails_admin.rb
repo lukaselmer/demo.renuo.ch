@@ -195,10 +195,30 @@ RailsAdmin.config do |config|
 
   config.model 'Ckeditor::Picture' do
     navigation_label 'Dateiverwaltung'
+    configure :type, :hidden
+    list do
+      field :data
+      field :width
+      field :height
+      field :updated_at
+      field :type do
+        visible false
+      end
+    end
     weight -2
   end
   config.model 'Ckeditor::AttachmentFile' do
     navigation_label 'Dateiverwaltung'
+    list do
+      field :data
+      field :updated_at
+      field :type do
+        visible false
+      end
+    end
+    edit do
+      field :data
+    end
   end
 
   config.model 'ContentRichText::Translation' do
