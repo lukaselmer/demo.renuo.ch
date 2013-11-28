@@ -1,0 +1,14 @@
+<ul class="nav nav-pills">
+  <li class="dropdown language">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Sprache <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <% I18n.available_locales.sort.each do |locale| %>
+          <li>
+            <%= link_to t("language.#{locale}"), root_path(locale: locale) %></a>
+          </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>

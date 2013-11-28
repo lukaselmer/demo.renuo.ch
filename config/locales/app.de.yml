@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 de:
+  language:
+    de: Deutsch
+    en: English
   route:
     users:
       index: 'Alle Benutzer anzeigen'

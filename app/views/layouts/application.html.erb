@@ -19,6 +19,13 @@
                 <div class="hmeta">Webseitenverwaltung für jedermann</div>
               </div>
             </div>
+            <% if I18n.available_locales.count %>
+            <div class="span6">
+              <div class="pull-right">
+                <%= render partial: 'layouts/language_switcher' %>
+              </div>
+            </div>
+            <% end %>
           </div>
       </div>
     </header>
