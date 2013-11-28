@@ -23,12 +23,75 @@ en:
   language:
     de: Deutsch
     en: English
-  route:
-    users:
-      index: 'Show all Users'
-      new: 'Create new User'
-      new: 'Edit User'
 
   nav:
     users:
       index: 'User Administration'
+
+  admin:
+    help:
+      navigation_item: &navihelp
+        page: Create link to a self created page.
+        target: 'E.g.:<br/>External link: <code>http://www.google.ch</code><br/>Internal link: <code>/news/latest</code>'
+        title: 'Link text'
+      footer_navigation_item: *navihelp
+
+  activerecord:
+    errors:
+      models:
+        navigation_item: &errornavi
+          attributes:
+            target:
+              blank: "or fill in 'Page'."
+            page:
+              blank: "or fill in 'Custom URL'."
+        footer_navigation_item: *errornavi
+    attributes:
+      page:
+        title: Pagenname (Browser window title)
+        content_types: Content
+      navigation_item: &naviitem
+        title: Title
+        target: Custom URL
+        page: Page
+      footer_navigation_item: *naviitem
+      content_rich_text/translation:
+        content: Content
+      user:
+        email: E-Mail
+        reset_password_sent_at: 'Passwort-Reset sent at'
+        remember_created_at: "'Remember me' activated at"
+        sign_in_count: "Number of Logins"
+        current_sign_in_at: "Logged in at"
+        last_sign_in_at: "Last log in at"
+        password: 'Password'
+        password_confirmation: 'Repeat password'
+        remember_me: 'Remember me'
+    models:
+      page:
+        one: Page
+        other: Pages
+      navigation:
+        one: Navigation
+        other: Navigations
+      content_rich_text:
+        one: Article
+        other: Articles
+      navigation_item:
+        one: Main Navigation
+        other: Main Navigation
+      footer_navigation_item:
+        one: Footer Navigation
+        other: Footer Navigation
+      role:
+        one: Role
+        other: Roles
+      user:
+        one: User
+        other: Users
+      ckeditor/attachment_file:
+          one: Attachment File
+          other: Attachment Files
+      ckeditor/picture:
+        one: Picture
+        other: Pictures
