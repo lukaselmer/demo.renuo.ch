@@ -27,11 +27,19 @@ renuo.pageLoad = ->
           new_content = e.editor.getData()
           $element = $(e.editor.element.$)
           url = $element.data('update-url')
-          field = $element.data('field')
+          field_config = $element.data('field-config')
+          field_name_prefix = field_config.field_name_prefix
+
           data = {
             '_method': 'put'
           }
-          data["#{field}"] = new_content
+
+          for field  in field_config.fields
+            form_field_name = "#{field_name_prefix}#{field.name}"
+            value = field.value
+            value = new_content if field.name == 'content'
+            data["#{form_field_name}"] = value
+
           $.ajax
             url: url
             data: data

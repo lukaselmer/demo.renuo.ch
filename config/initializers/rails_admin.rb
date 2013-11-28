@@ -203,13 +203,16 @@ RailsAdmin.config do |config|
 
   config.model 'ContentRichText::Translation' do
     visible false
-    # hide entire field including help block
-    configure :locale do
-      visible false
-    end
+    configure :locale, :hidden
+    #do
+    #  visible false
+    #end
     include_fields :locale, :content
     edit do
       field :content, :ck_editor
+      field :locale do
+        help false
+      end
     end
   end
 

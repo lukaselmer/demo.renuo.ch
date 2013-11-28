@@ -2,9 +2,8 @@
 - if can?(:edit, record)
   - editable_class = 'editable'
   - contenteditable = 'true'
-  - update_url = rails_admin.edit_path(model_name: record.class.model_name.singular, id: record.to_param)
-  / force rails_admin to return_to after successful update (path/url helpers did not recognize ssl!)
-  - update_url = "#{update_url}?return_to=http#{Rails.env.production? ? 's':''}://#{request.host}#{Rails.env.production? ? '' : ":#{request.port}"}#{root_path}"
+  - url = update_url(record)
+  - field_config = content_rich_text_fields(record).to_json
 
-div class="content-type rich-text #{editable_class}" data-update-url="#{update_url}" data-field="#{record.class.model_name.singular}[content]" contenteditable="#{contenteditable}"
+div class="content-type rich-text #{editable_class}" data-update-url="#{url}" data-field-config="#{field_config}" contenteditable="#{contenteditable}"
   = record.content.html_safe
