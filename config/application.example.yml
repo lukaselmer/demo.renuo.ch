@@ -17,3 +17,17 @@ RAILS_SECRET_TOKEN: very_long_string___use_rake_secret___
 APP_DOMAIN: demo.renuo.ch
 CODECLIMATE_REPO_TOKEN: 37cd5900261e8d354d04cf5afd6b47cbf7ebe11d9ff347faef041cea3fdd525e
 ENABLE_COVERALLS: 1
+USE_SSL: 0
+
+development:
+  # create a personal one
+  S3_BUCKET_NAME: cms.renuo.ch
+  AWS_ACCESS_KEY_ID: A....Q
+  AWS_SECRET_ACCESS_KEY: 3....I
+
+production:
+  USE_SSL: 1
+  # use the one from info@renuo.ch
+  S3_BUCKET_NAME: cms.renuo.ch
+  AWS_ACCESS_KEY_ID: A.....Q
+  AWS_SECRET_ACCESS_KEY: X....h
