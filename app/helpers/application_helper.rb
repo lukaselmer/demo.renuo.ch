@@ -14,9 +14,11 @@ module ApplicationHelper
 
 
   def update_url(record)
-    update_url = rails_admin.edit_path(model_name: record.class.model_name.singular, id: record.to_param)
     #force rails_admin to return_to after successful update (path/url helpers did not recognize ssl!)
-    "#{update_url}?return_to=http#{Figaro.env.use_ssl == '1' ? 's' : ''}://#{request.host}#{[80, 443].include?(request.port) ? '' : ":#{request.port}"}#{root_path}"
+    port = [80, 443].include?(request.port) ? '' : ":#{request.port}"
+    ssl_suffix = Figaro.env.use_ssl == '1' ? 's' : ''
+    return_to = "http#{ssl_suffix}://#{request.host}#{port}#{root_path}"
+    rails_admin.edit_path(model_name: record.class.model_name.singular, id: record.to_param, locale: nil, return_to: return_to)
   end
 
   def content_rich_text_fields(record)
