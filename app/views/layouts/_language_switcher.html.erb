@@ -1,7 +1,7 @@
 <ul class="nav nav-pills">
   <li class="dropdown language">
     <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#">
-      Sprache <span class="caret"></span>
+      <%= t("language.#{I18n.locale}")%> <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
       <% I18n.available_locales.sort.each do |locale| %>
