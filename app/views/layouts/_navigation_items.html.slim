@@ -1,0 +1,4 @@
+- nav_class ||= ''
+ul class="#{nav_class}"
+  - item_class.roots.ordered.each do |ni|
+      = render 'layouts/navigation_item', ni: ni

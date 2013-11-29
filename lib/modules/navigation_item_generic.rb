@@ -12,7 +12,7 @@ module NavigationItemGeneric
     model.validates_presence_of :page, if: -> {target.blank?}
     model.validates_presence_of :target, if: -> {page.blank?}
 
-    model.scope :flat, ->  {
+    model.scope :ordered, ->  {
       model.order(:position)
     }
 
@@ -55,7 +55,7 @@ module NavigationItemGeneric
       weight -3
 
       nestable_tree({
-                        max_depth: 1,
+                        max_depth: 2,
                         position_field: :position
                     })
     end

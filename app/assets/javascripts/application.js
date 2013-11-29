@@ -17,5 +17,6 @@
 //= require ckeditor/override
 //= require ckeditor/init
 //= require ckeditor/ckeditor
+//= require twitter_bootstrap_hover_dropdown
 //= require cms
 

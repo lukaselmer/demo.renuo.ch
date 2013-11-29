@@ -1,0 +1,13 @@
+li class="#{ni.has_children? ? 'dropdown':''}"
+  - link_attributes = ni.has_children? ? {class: "dropdown-toggle", "data-toggle"=> "dropdown", "data-hover"=> "dropdown"} : {}
+  - link_target = ni.page
+  - link_target = ni.localized_target(I18n.locale) if ni.target.present?
+  = link_to link_target, link_attributes do
+    = ni.label
+    - if ni.has_children?
+      b class="caret"
+
+  - if ni.has_children?
+    ul class="dropdown-menu"
+      - ni.children.ordered.each do |ni|
+          = render 'layouts/navigation_item', ni: ni

@@ -9,6 +9,14 @@
   text-transform: uppercase;
 }
 
+// rails_admin_nestable
+#rails_admin_nestable .dd {
+  font-size: inherit;
+}
+#rails_admin_nestable .dd-item, .dd-empty, .dd-placeholder{
+  font-size: inherit;
+}
+
 
 // less border on tab pane
 body.rails_admin .form-horizontal .tab-content .tab-pane {
