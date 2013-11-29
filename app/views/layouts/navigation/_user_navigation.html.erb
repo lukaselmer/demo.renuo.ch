@@ -1,0 +1,24 @@
+<ul class="nav pull-right">
+
+  <% if user_signed_in? %>
+      <li>
+        <%= link_to 'Abmelden', destroy_user_session_path, :method=>'delete' %>
+      </li>
+  <% else %>
+      <li>
+        <%= link_to 'Anmelden', new_user_session_path %>
+      </li>
+  <% end %>
+  <% if user_signed_in? %>
+      <li>
+        <%= link_to 'Account bearbeiten', edit_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to 'Admin', rails_admin_path, 'data-no-turbolink'=> true %>
+      </li>
+  <% else %>
+      <li>
+        <%= link_to 'Registration', new_user_registration_path %>
+      </li>
+  <% end %>
+</ul>

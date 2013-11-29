@@ -1,0 +1,5 @@
+- nav_class ||= ''
+- items ||= item_class.roots
+ul class="#{nav_class}"
+  - items.ordered.each do |ni|
+      = render 'layouts/navigation/navigation_item_flat', ni: ni

@@ -10,4 +10,4 @@ li class="#{ni.has_children? ? 'dropdown':''}"
   - if ni.has_children?
     ul class="dropdown-menu"
       - ni.children.ordered.each do |ni|
-          = render 'layouts/navigation_item', ni: ni
+          = render 'layouts/navigation/navigation_item_dropdown', ni: ni

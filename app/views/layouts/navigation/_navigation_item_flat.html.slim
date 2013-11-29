@@ -1,0 +1,4 @@
+li class="#{is_nav_item_active(ni) ? 'active' : ''}"
+  - link_target = ni.page
+  - link_target = ni.localized_target(I18n.locale) if ni.target.present?
+  = link_to ni.label, link_target

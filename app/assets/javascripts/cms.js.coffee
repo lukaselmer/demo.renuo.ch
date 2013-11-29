@@ -14,6 +14,8 @@ renuo.pageReady = ->
 
 renuo.pageLoad = ->
 
+  $('[data-hover="dropdown"]').dropdownHover();
+
   CKEDITOR.disableAutoInline = true;
 
   $('.editable').each ->

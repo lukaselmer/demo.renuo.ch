@@ -32,10 +32,17 @@
     <div class="navbar">
       <nav class="navbar-inner">
         <div class="container">
-          <%= render 'layouts/navigation' %>
+          <%= render 'layouts/navigation/navigation' %>
         </div>
       </nav>
     </div>
+    <% if subnav_visible?  %>
+      <nav class="navbar">
+        <div class="container">
+          <%= render 'layouts/navigation/navigation_items_flat', item_class: NavigationItem, nav_class: 'nav subnav', items: subnav_items %>
+        </div>
+      </nav>
+    <% end %>
     <div class="content">
     <div class="container">
        <div class="row">
@@ -53,7 +60,7 @@
               <div class="span4">
                 <div class="fwidget">
                     <h6>Links</h6>
-                    <%= render 'layouts/navigation_items', item_class: FooterNavigationItem %>
+                    <%= render 'layouts/navigation/navigation_items_flat', item_class: FooterNavigationItem %>
                 </div>
               </div>
               <div class="span4">

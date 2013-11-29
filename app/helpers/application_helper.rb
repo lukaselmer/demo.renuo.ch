@@ -41,4 +41,39 @@ module ApplicationHelper
     }
   end
 
+
+  def active_nav_item
+    return @active_nav_item if @active_nav_item
+    url_path = request.path
+    page = page_by_path(url_path)
+    items = []
+    [NavigationItem, FooterNavigationItem].each do |item_class|
+      items.concat(item_class.all.select do |item|
+        # manually typed target wins over chosen page
+        (item.localized_target(I18n.locale) == url_path || (page.present? && item.page_id.to_s == page.to_param))
+      end)
+    end
+    # items.count.should eq 1
+    @active_nav_item = items.first # cache active_nav_item per request
+  end
+
+  def page_by_path(url)
+    Page.select do |p|
+      path = url_for(p)
+      path == url
+    end.first
+  end
+
+  def is_nav_item_active ni
+    return if active_nav_item.nil?
+    ni.id == active_nav_item.id || active_nav_item.path_ids.include?(ni.id)
+  end
+
+  def subnav_items
+    active_nav_item.parent ? active_nav_item.siblings : active_nav_item.children
+  end
+
+  def subnav_visible?
+    active_nav_item && (active_nav_item.has_children? || active_nav_item.parent)
+  end
 end
