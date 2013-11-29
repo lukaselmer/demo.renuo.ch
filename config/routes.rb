@@ -8,7 +8,6 @@ DemoRenuoCh::Application.routes.draw do
     root :to => "home#index"
     resources :pages, only: [:show]
     resources :contacts, only: [:index]
-    resources :users
   end
 
 end
