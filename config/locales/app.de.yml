@@ -24,9 +24,7 @@ de:
     de: Deutsch
     en: English
 
-  nav:
-    users:
-      index: 'Benutzer Administration'
+  back: Zurück
 
   admin:
     help:
@@ -68,6 +66,7 @@ de:
         current_sign_in_at: "Eingeloggt am"
         last_sign_in_at: "Zuletzt eingeloggt am"
         password: 'Passwort'
+        current_password: 'Aktuelles Passwort'
         password_confirmation: 'Passwort wiederholen'
         remember_me: 'Angemeldet bleiben'
     models:

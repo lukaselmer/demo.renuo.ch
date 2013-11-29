@@ -24,10 +24,6 @@ en:
     de: Deutsch
     en: English
 
-  nav:
-    users:
-      index: 'User Administration'
-
   admin:
     help:
       navigation_item: &navihelp
@@ -65,6 +61,7 @@ en:
         current_sign_in_at: "Logged in at"
         last_sign_in_at: "Last log in at"
         password: 'Password'
+        current_password: 'Current password'
         password_confirmation: 'Repeat password'
         remember_me: 'Remember me'
     models:

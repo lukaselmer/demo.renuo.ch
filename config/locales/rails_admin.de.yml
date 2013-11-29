@@ -25,6 +25,7 @@ de:
       down: "Runter"
       navigation: "Navigation"
       log_out: "Abmelden"
+      log_in: "Anmelden"
       ago: "her"
     flash:
       successful: "%{name} wurde erfolgreich %{action}"

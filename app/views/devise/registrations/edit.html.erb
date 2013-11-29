@@ -1,14 +1,13 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
   <%= f.input :name, :autofocus => true %>
   <%= f.input :email, :required => true %>
-  <%= f.input :password, :autocomplete => "off", :hint => "Leer lassen wenn nichts geändert werden soll.", :required => false %>
+  <%= f.input :password, :autocomplete => "off", :hint => t('devise.passwords.password_hint'), :required => false %>
   <%= f.input :password_confirmation, :required => false %>
-  <%= f.input :current_password, :hint => "Zur Sicherheit wird ein Passwort benötigt.", :required => true %>
-  <%= f.button :submit, 'Ändern', :class => 'btn-primary' %>
+  <%= f.input :current_password, :hint => t('devise.passwords.current_password_hint'), :required => true %>
+  <%= f.button :submit, t('admin.form.save'), :class => 'btn-primary' %>
 <% end %>
-<h3>Account künden</h3>
-<p>Klicken Sie auf <%= link_to "Account künden", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %> um den Account unbenutzbar zu machen.</p>
-<%= link_to "Zurück", :back %>
+<h3><%= t('devise.registrations.destroy_label') %></h3>
+<p><%= t('devise.registrations.destroy_text', link: link_to(t('devise.registrations.destroy_label'), registration_path(resource_name), :data => { :confirm => t('admin.form.confirmation') }, :method => :delete)).html_safe %></p>
+<%= link_to t('back'), :back %>
