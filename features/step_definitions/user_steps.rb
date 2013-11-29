@@ -68,6 +68,19 @@ Given /^I exist as an unconfirmed user$/ do
   create_unconfirmed_user
 end
 
+And(/^Demo CMS is set up$/) do
+  p = Page.create!({key: 'home', title: 'Renuo CMS Demo - Startseite'})
+  c = ContentRichText.create!({name: 'Inhalt Startseite', content: '<h2>Willkommen bei der CMS Demo</h2></p>Lorem impsum</p>'.html_safe})
+  p.content_types << c
+
+  ContentRichText.create!({key: 'copyright', name: 'Copyright Fusszeile', content: '<p>Copyright &copy; <a href="https://www.renuo.ch">Renuo GmbH</a> - <a href="https://www.renuo.ch/ueber-uns">Über uns</a> | <a href="https://www.renuo.ch/kontakt">Kontakt</a></p>'.html_safe})
+
+
+  p = Page.create!({key: 'contact', title: 'Kontakt'})
+  c = ContentRichText.create!({name: 'Inhalt Kontakt', content: '<h2>Bitte Ändern</h2><p>Lorem ipsum</p>'.html_safe})
+  p.content_types << c
+end
+
 ### WHEN ###
 When /^I sign in with valid credentials$/ do
   create_visitor
@@ -129,7 +142,7 @@ When /^I edit my account details$/ do
 end
 
 When /^I look at the list of users$/ do
-  visit '/'
+  visit '/users'
 end
 
 ### THEN ###
