@@ -114,5 +114,7 @@ de:
         one: Bild
         other: Bilder
   contacts:
+    create:
+      confirm_contact_request: Vielen Dank für Ihre Anfrage.
     index:
       contact_request_title: "Kontaktanfrage"

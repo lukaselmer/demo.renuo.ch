@@ -108,5 +108,7 @@ en:
         one: Picture
         other: Pictures
   contacts:
+    create:
+      confirm_contact_request: Thank your for your request.
     index:
       contact_request_title: "Contact Request"

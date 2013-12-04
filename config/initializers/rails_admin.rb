@@ -60,7 +60,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['Role', 'User']
 
   # Include specific models (exclude the others):
-  config.included_models = [Role, User, Page, ContentRichText, ContentRichText::Translation,
+  config.included_models = [Role, User, Contact, Page, ContentRichText, ContentRichText::Translation,
                             NavigationItem, FooterNavigationItem, Ckeditor::AttachmentFile, Ckeditor::Picture]
 
   # Label methods for model instances:
