@@ -14,10 +14,7 @@ class Ability
       c.key.present?
     end
 
-    cannot :edit, Contact
-    cannot :update, Contact
-    cannot :create, Contact
-    cannot :history, Contact
+    cannot [:edit, :create, :history], Contact
 
     # Define abilities for the passed in user here. For example:
     #
