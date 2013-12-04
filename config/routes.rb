@@ -7,7 +7,7 @@ DemoRenuoCh::Application.routes.draw do
   scope "(:locale)", :locale => /en|de/ do
     root :to => "home#index"
     resources :pages, only: [:show]
-    resources :contacts, only: [:index]
+    resources :contacts, only: [:index, :create]
   end
 
 end

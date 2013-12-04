@@ -24,6 +24,13 @@ en:
     de: Deutsch
     en: English
 
+  back: Back
+
+  helpers:
+   submit:
+     contact:
+       create: Send request
+
   admin:
     help:
       navigation_item: &navihelp
@@ -43,6 +50,11 @@ en:
               blank: "or fill in 'Custom URL'."
         footer_navigation_item: *errornavi
     attributes:
+      contact:
+        firstname: Firstname
+        lastname: Lastname
+        comment: Comment
+        email: E-Mail
       page:
         title: Pagenname (Browser window title)
         content_types: Content
@@ -65,6 +77,9 @@ en:
         password_confirmation: 'Repeat password'
         remember_me: 'Remember me'
     models:
+      contact:
+        one: Contact
+        other: Contacts
       page:
         one: Page
         other: Pages
@@ -92,3 +107,6 @@ en:
       ckeditor/picture:
         one: Picture
         other: Pictures
+  contacts:
+    index:
+      contact_request_title: "Contact Request"

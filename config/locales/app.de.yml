@@ -26,6 +26,11 @@ de:
 
   back: Zurück
 
+  helpers:
+   submit:
+     contact:
+       create: Kontaktanfrage senden
+
   admin:
     help:
       navigation_item: &navihelp
@@ -48,6 +53,11 @@ de:
               blank: "oder 'Beliebige Adresse' ausfüllen."
         footer_navigation_item: *errornavi
     attributes:
+      contact:
+        firstname: Vorname
+        lastname: Nachname
+        comment: Kommentar
+        email: E-Mail
       page:
         title: Seitenname (Browser-Fenster-Titel)
         content_types: Inhalte
@@ -70,6 +80,9 @@ de:
         password_confirmation: 'Passwort wiederholen'
         remember_me: 'Angemeldet bleiben'
     models:
+      contact:
+        one: Kontakt
+        other: Kontakte
       page:
         one: Seite
         other: Seiten
@@ -100,3 +113,6 @@ de:
       ckeditor/picture:
         one: Bild
         other: Bilder
+  contacts:
+    index:
+      contact_request_title: "Kontaktanfrage"

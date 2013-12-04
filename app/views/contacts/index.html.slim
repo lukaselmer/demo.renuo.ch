@@ -1,0 +1,11 @@
+= render 'pages/page', page: Page.predefined(:contact)
+
+h2= t('.contact_request_title')
+
+= simple_form_for @contact do |f|
+  = f.input :firstname
+  = f.input :lastname
+  = f.input :email
+  = f.input :comment, as: :text, input_html: {rows: 8}
+
+  = f.button :submit, class: 'btn-primary'
