@@ -4,7 +4,4 @@ class Role < ActiveRecord::Base
 
   scopify
 
-  rails_admin do
-    navigation_label 'User Management'
-  end
 end
