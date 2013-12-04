@@ -53,8 +53,9 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
   end
-  config.before(:each) do
+  config.before(:each) do |x|
     DatabaseCleaner.start
+    x.try(:request) && (x.request.env['HTTP_ACCEPT_LANGUAGE'] = 'de-CH,de;q=0.8,en;q=0.6')
   end
   config.after(:each) do
     DatabaseCleaner.clean
